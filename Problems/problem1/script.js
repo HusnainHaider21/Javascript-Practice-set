@@ -21,9 +21,9 @@ let num = [3,5,6,8,9,"17"];
 
 function substraction(num) {
     for (let index = 0; index < num.length; index++) {
-        
         num[index]=num[index]-1;
     }
+        
     return num }
 
     substraction(num)
@@ -32,3 +32,13 @@ function substraction(num) {
     
 
     
+let elements = [8,16,24,"32",40,48,56,"64",72,80];
+
+function divideTheElements(elements){
+    for (let index = 0; index < elements.length; index++) {
+          elements[index]=elements[index]/8
+        }     
+  return elements }
+
+  divideTheElements(elements)
+  console.log("divdTheElements",elements);

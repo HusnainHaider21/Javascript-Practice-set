@@ -1,6 +1,10 @@
-let fulName = husnain;
-console.log(fulName);
+const profile = {
+    profilePlateform : "Instagram",
+    name : "Shradha Khapra",
+    posts : 195,
+    followers : 569000,
+    following : 4,  
+    isfollow : "true", 
+};
 
-let a = 23;
-let b = 22;
-console.log(a+b);
+console.log(typeof profile["name"]);
