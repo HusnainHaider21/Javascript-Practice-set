@@ -42,3 +42,6 @@ function divideTheElements(elements){
 
   divideTheElements(elements)
   console.log("divdTheElements",elements);
+
+
+  let num1 = 8;
