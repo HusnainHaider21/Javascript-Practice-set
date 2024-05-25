@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript-Events</title>
+</head>
+<body>
+    <h1>Javascript-Events</h1>
+
+    <form>
+        ZIP: <br>
+        <input type="text" id="ZIP" onblur="fillcity();"><br>
+        city: <br>
+        <input type="text" id="city">
+    </form>
+    
+
+
+    <script>
+        function fillcity(){
+            let zipCode = document.getElementById("ZIP").value
+            console.log("zip code",zipCode);
+            if (zipCode == 38000) {
+                console.log("zip code",Faisalabad);
+                
+            } else if (zipCode ==39000){
+                console.log("zip code",Lahore);
+            } else {
+                console.log("invalid zip code");
+            }
+            
+        }
+       
+
+    </script>
+</body>
+</html>
