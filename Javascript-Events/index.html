@@ -8,29 +8,211 @@
 <body>
     <h1>Javascript-Events</h1>
 
-    <form>
+    <!-- <form>
         ZIP: <br>
         <input type="text" id="ZIP" onblur="fillcity();"><br>
         city: <br>
         <input type="text" id="city">
-    </form>
+    </form> -->
+
+    <!-- Javascript-Events -->
+     <!--1: onclick-Events -->
+       <button id="click" onclick="message()">click me</button>
+
+       <p id="hus" onclick="addPara()">Husnain Haider <a href="#">See more </a></p>
+
+       <!-- 2:onMouseOver and onMouseOut -->
+       <img src="download (1).jpeg" id="myImage" onmouseover="changeAlt()" onmouseout="addAlt()" alt="firstImage">
+         
+       <!-- using Paragraph in onMouseOver and onMouseOut events  -->
+       <p id="para" onmouseover="para1()" onmouseout="para2()">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, magni.</p>
+
+       <!-- 2 onFocus and onblur events -->
+       Email : <br>
+       <input type="text" size="94" id="user" onfocus="this.style.backgroundColor='yellow'" onblur="this.style.backgroundColor='white'">
+
+
+        <!-- //reading Field Values -->
+        <!-- using onSubmit event Handler -->
+        <form onsubmit="checkAdress('email')"> <br>
+            Email:
+            <input type="text" id="email">
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- setting field values -->
+        <form>
+            ZIP: <br>
+            <input type="text" id="zip" onblur="fillCity()"> <br>
+            City: <br>
+            <input type="text" id="city">
+        </form>
+
+        <!-- Reading and setting Paragraph text  -->
+
+        <p id="text" onclick="addText()">Lorem ipsum dolor sit amet. <a href="#">click for more </a></p>
+        
+
+
+
+      
+
+
+
+
     
-
-
     <script>
-        function fillcity(){
-            let zipCode = document.getElementById("ZIP").value
-            console.log("zip code",zipCode);
-            if (zipCode == 38000) {
-                console.log("zip code",Faisalabad);
+        // Reading and setting Paragraph text //
+        function addText() {
+            let check = document.getElementById("text");
+            check.textContent="Lorem ipsum dolor sit amet consectetur adipisicing elit. Error voluptatibus excepturi veniam doloremque ullam temporibus a delectus deserunt qui id at officia aut quae impedit inventore, dolores voluptas nostrum beatae.";
+            
+        }
+
+
+
+
+
+
+        /*setting field values*/
+        function fillCity() {
+        let cityName;
+        let zipEntered =document.getElementById("zip").value;
+        if (zipEntered=="38000") {
+            cityName ="Faisalabad";
+            
+        }else if (zipEntered=="39000") {
+            cityName ="Lahore";
+            
+        }else{
+            alert('Please enter correct Zip Code');
+        }
+        document.getElementById("city").value=cityName;
+
+        }
+
+        
+        
+
+
+
+
+
+
+
+
+        // reading field values
+        function checkAdress(fieldId) {
+            let val = document.getElementById(fieldId).value;
+            if (val ==="") {
+                alert('email is required');
                 
-            } else if (zipCode ==39000){
-                console.log("zip code",Lahore);
-            } else {
-                console.log("invalid zip code");
             }
             
         }
+
+
+
+
+
+
+
+
+
+        //using onfocus and onblur events//
+        function userFocus(fieldId) {
+            let check = document.getElementById("user").value;
+            if (fieldId==="") {
+                alert('email is required');
+                
+            }
+            
+
+            
+        }
+
+
+
+
+
+
+
+        // using paragraph in onclick event 
+        function addPara(){
+            let paragraph = document.getElementById("hus");
+            paragraph.textContent="Husnain Haider read in 13rd year . His aim is to become a ideal software engineer at faang which means Facebook ,Apple, Amazon, Netflix and Google.";
+        }
+
+       
+
+
+
+
+
+
+
+
+        // paragraph function
+        function para1() {
+            let inFormation = document.getElementById("para");
+            inFormation.innerHTML=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nobis atque quod ipsum labore quaerat facere eligendi molestias, dolores explicabo, voluptatum laboriosam ut exercitationem. Quae explicabo sint suscipit assumenda repudiandae laborum dolores eligendi itaque fugiat vel, soluta neque, non minima.";
+        }
+
+        function para2() {
+            let inFormation = document.getElementById("para");
+            inFormation.innerHTML="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, magni";
+            
+        }
+
+
+
+
+
+
+
+        function changeAlt() {
+            let data = document.getElementById("myImage");
+            data.src='download (2).jpeg';
+        }
+
+        function addAlt() {
+            let image = document.getElementById("myImage");
+            image.src='download (1).jpeg';
+            
+        }
+      
+    
+       
+
+
+
+
+
+
+
+
+       function message() {
+        let btnUser = document.getElementById("click");
+        alert('What are you doing');
+        btnUser.innerHTML="you have clicked me"
+        
+       }
+
+
+
+        // function fillcity(){
+        //     let zipCode = document.getElementById("ZIP").value
+        //     console.log("zip code",zipCode);
+        //     if (zipCode == 38000) {
+        //         console.log("zip code",Faisalabad);
+                
+        //     } else if (zipCode ==39000){
+        //         console.log("zip code",Lahore);
+        //     } else {
+        //         console.log("invalid zip code");
+        //     }
+            
+        // }
        
 
     </script>
